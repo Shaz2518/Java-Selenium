@@ -1,5 +1,6 @@
 package Locators;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -40,11 +41,16 @@ public class Locators_Practice {
 		driver.findElement(By.cssSelector("input[placeholder='Username']")).sendKeys("shaziya");
 		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("rahulshettyacademy");
 		
-		//driver.findElement(By.id("chkboxOne")).click();
-		//driver.findElement(By.name("chkboxTwo")).click();
 		driver.findElement(By.className("signInBtn")).click();
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 		
+		//Extract Text and Logout.
+		Thread.sleep(1000);
+		System.out.println(driver.findElement(By.tagName("p")).getText());
+		String display = driver.findElement(By.tagName("p")).getText();
+		Assert.assertEquals(display, "You are successfully logged in.");
+		
+		driver.findElement(By.cssSelector("button[class='logout-btn']")).click();
 	}
 
 }
