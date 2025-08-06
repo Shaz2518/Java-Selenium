@@ -15,6 +15,8 @@ public class Locators_Practice {
 		//Navigate to webpage
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
 		
+		driver.manage().window().maximize();
+		
 		//Fill Login Page --> Locators - id, name, classname
 		driver.findElement(By.id("inputUsername")).sendKeys("shaziya");
 		driver.findElement(By.name("inputPassword")).sendKeys("shaziya");
@@ -33,13 +35,24 @@ public class Locators_Practice {
 		driver.findElement(By.xpath("//input[@placeholder='Phone Number']")).sendKeys("123456");
 		
 		driver.findElement(By.cssSelector("button[class='reset-pwd-btn']")).click();
-		String password = driver.findElement(By.xpath("//p[@class='infoMsg']")).getText();
+		
+		//Extract Password -- Please use temporary password 'rahulshettyacademy' to Login.
+		String passwordText = driver.findElement(By.cssSelector("p.infoMsg")).getText();
+		String[] password_1 = passwordText.split("'");
+		String half = password_1[1];
+		String[] secondHalf = half.split("'");
+		String passwordFinal = secondHalf[0];
+		System.out.println(passwordFinal);
+				
 		
 		//Fill in the correct details in form
 		driver.findElement(By.xpath("//button[@class='go-to-login-btn']")).click();
 		
 		driver.findElement(By.cssSelector("input[placeholder='Username']")).sendKeys("shaziya");
-		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("rahulshettyacademy");
+		
+		
+		
+		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(passwordFinal);
 		
 		driver.findElement(By.className("signInBtn")).click();
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
@@ -50,7 +63,7 @@ public class Locators_Practice {
 		String display = driver.findElement(By.tagName("p")).getText();
 		Assert.assertEquals(display, "You are successfully logged in.");
 		
-		driver.findElement(By.cssSelector("button[class='logout-btn']")).click();
+		driver.findElement(By.xpath("//button[text()='Log Out']")).click();
 	}
 
 }
