@@ -53,7 +53,7 @@ public class Locators_Practice {
 		
 		
 		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(passwordFinal);
-		
+		Thread.sleep(1000);
 		driver.findElement(By.className("signInBtn")).click();
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 		
@@ -64,6 +64,7 @@ public class Locators_Practice {
 		Assert.assertEquals(display, "You are successfully logged in.");
 		
 		driver.findElement(By.xpath("//button[text()='Log Out']")).click();
+		//driver.close();
 	}
 
 }
