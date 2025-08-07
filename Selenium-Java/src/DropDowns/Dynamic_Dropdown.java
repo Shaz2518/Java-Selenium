@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Update_Dropdown {
+public class Dynamic_Dropdown {
 
 	public static void main(String[] args) throws InterruptedException {
 		// Invoke Browser
@@ -14,16 +14,15 @@ public class Update_Dropdown {
 		// Navigate to webpage
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 		driver.manage().window().maximize();
-
-		// Select data
-		driver.findElement(By.id("divpaxinfo")).click();
+		
+		//Select From-To Destination
+		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
+		driver.findElement(By.xpath("//a[@value='BOM']")).click();
+		System.out.println("From State: " + driver.findElement(By.xpath("//a[@value='BOM']")).getText());
+		
 		Thread.sleep(2000L);
-		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
-		for (int i = 1; i < 5; i++) {
-			driver.findElement(By.id("hrefIncAdt")).click();
-		}
-		driver.findElement(By.id("btnclosepaxoption")).click();
-		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+		driver.findElement(By.xpath("(//a[@value='HYD'])[2]")).click();
+		System.out.println("To State: " + driver.findElement(By.xpath("(//a[@value='HYD'])[2]")).getText());
 
 	}
 
