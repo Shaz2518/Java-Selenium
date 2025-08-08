@@ -1,10 +1,13 @@
 package DropDowns;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DynamicDD_ParentChild {
+public class AutoSuggestive_Dropdown {
 
 	public static void main(String[] args) throws InterruptedException {
 		// Invoke Browser
@@ -15,12 +18,19 @@ public class DynamicDD_ParentChild {
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 		driver.manage().window().maximize();
 
-		// Select From-To Destination-- using parent-child xpath for multiple elements in same page
-		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
-		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR'] //a[@value='BOM']")).click();
+		// Handle autosuggestive dropdown
+		driver.findElement(By.id("autosuggest")).sendKeys("Uni");
+		Thread.sleep(3000);
 
-		Thread.sleep(2000L);
-		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='HYD']")).click();
+		// Get list of all elements
+		List<WebElement> options = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
+		for (WebElement option : options) {
+			if (option.getText().equalsIgnoreCase("United States (USA)")) {
+				option.click();
+				break;
+			}
+		}
+		
 	}
 
 }
