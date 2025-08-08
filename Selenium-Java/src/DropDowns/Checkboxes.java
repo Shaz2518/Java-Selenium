@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class Checkboxes {
 
@@ -27,6 +28,18 @@ public class Checkboxes {
 		
 		System.out.println("After Click: " + driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 	
+		
+		//Trip Category
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("Style"));
+		driver.findElement(By.cssSelector("input[id='ctl00_mainContent_rbtnl_Trip_1']")).click();
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("Style"));
+		if(driver.findElement(By.id("Div1")).getAttribute("Style").contains("1"))
+		{
+			System.out.println("Is Enabled");
+			Assert.assertTrue(true);
+		}
+		else
+			Assert.assertTrue(false);
 	}
 
 }
