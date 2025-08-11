@@ -20,8 +20,6 @@ public class LoginPage_Assignment {
 		// Invoke Browser
 		System.setProperty("webdriver.driver.chrome", "/Users/localadminuser/Documents/Drivers/chromedriver.exe");
 		
-		
-		
 		//Escape password manager
 		ChromeOptions options = new ChromeOptions();
 		Map<String, Object> prefs = new HashMap<String, Object>();
