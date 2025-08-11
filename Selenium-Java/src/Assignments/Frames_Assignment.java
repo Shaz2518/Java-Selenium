@@ -25,6 +25,8 @@ public class Frames_Assignment {
 		
 		//Extract middle frame text
 		System.out.println(driver.findElement(By.id("content")).getText());
+		
+		driver.switchTo().defaultContent();
 	}
 
 }
