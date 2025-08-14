@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-22">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -16,7 +17,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.33.0/selenium-chrome-driver-4.33.0.jar" sourcepath="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.33.0/selenium-chrome-driver-4.33.0-sources.jar">
+	<classpathentry exported="true" kind="lib" path="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.33.0/selenium-chrome-driver-4.33.0.jar" sourcepath="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.33.0/selenium-chrome-driver-4.33.0-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="org.seleniumhq.selenium"/>
@@ -34,7 +35,7 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-api/4.33.0/selenium-api-4.33.0.jar" sourcepath="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-api/4.33.0/selenium-api-4.33.0-sources.jar">
+	<classpathentry exported="true" kind="lib" path="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-api/4.33.0/selenium-api-4.33.0.jar" sourcepath="C:/Users/localadminuser/.m2/repository/org/seleniumhq/selenium/selenium-api/4.33.0/selenium-api-4.33.0-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="org.seleniumhq.selenium"/>
@@ -43,5 +44,10 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/localadminuser/Documents/Drivers/JavaJars/commons-io-2.20.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/localadminuser/Documents/Drivers/JavaJars/commons-io-2.20.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/localadminuser/Documents/Drivers/JavaJars/commons-io-2.20.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/localadminuser/Documents/Drivers/JavaJars/commons-io-2.20.0-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Users/localadminuser/Documents/Drivers/JavaJars/commons-io-2.20.0-test-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
