@@ -14,7 +14,7 @@ public class WorkFlow_Practice {
 		WebDriver driver = new EdgeDriver();
 		WebDriverWait explicitWait = new WebDriverWait(driver,Duration.ofSeconds(5));
 
-		driver.get("http://10.178.115.114:81/workflow_1_page1.aspx");
+		driver.get("");
 		driver.findElement(By.xpath("//input[@value='Open a Popup']")).click();
 
 		closeWindow(driver);
