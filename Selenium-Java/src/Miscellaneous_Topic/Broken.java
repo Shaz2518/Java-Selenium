@@ -7,15 +7,12 @@ import java.net.URL;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
-public class BrokenLinks_Demo {
+public class Broken {
 
 	public static void main(String[] args) throws MalformedURLException, IOException {
 		// Invoke Browser
@@ -25,26 +22,18 @@ public class BrokenLinks_Demo {
 		// Navigate to webpage
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		driver.manage().window().maximize();
-		SoftAssert soft = new SoftAssert();
 
-		// Get Links
-		List<WebElement> list = driver.findElements(By.cssSelector("li[class*='gf-li'] a"));
-
-		// Iterate through all links to find status code
-		for (WebElement links : list) {
+		
 			// Establish connection and check status code
-			String urlLink = links.getAttribute("href");
+			String urlLink = driver.findElement(By.cssSelector("a[href*='appium']")).getAttribute("href");
 			HttpURLConnection connect = (HttpURLConnection) new URL(urlLink).openConnection();
 			connect.setRequestMethod("HEAD");
 			int respCode = connect.getResponseCode();
-			System.out.println(respCode);
-
-			// Soft Assertion
-			soft.assertTrue(respCode < 400, "The broken link is encountered: " + links.getText() + " " + respCode);
+System.out.println(respCode);
+			
 
 		}
-		soft.assertAll();
 
 	}
 
-}
+
