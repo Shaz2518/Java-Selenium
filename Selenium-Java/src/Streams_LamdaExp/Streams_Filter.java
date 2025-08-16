@@ -11,8 +11,8 @@ public class Streams_Filter {
 		name.add("Abhishek");
 		name.add("Sumit");
 		name.add("Ali");
-		name.add("Ajay");
-		name.add("Atul");
+		name.add("Amit");
+		name.add("Sujit");
 		int count =0;
 		
 		//Brute Force Approach
@@ -38,6 +38,8 @@ public class Streams_Filter {
 		
 		//Print name length less the 4
 		name.stream().filter(s->s.length()<=4).forEach(s->System.out.println(s));
+		
+		
 		
 		
 		
