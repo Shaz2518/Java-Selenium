@@ -30,7 +30,25 @@ public class WebTable_Sorted {
 		//Compare if its same as original
 		Assert.assertTrue(originalList.equals(sortedList));
 		
+		//Get price of respective element --> Pagination
+		List<String> price;
+		do {
+			List<WebElement> rows = driver.findElements(By.xpath("//tr/td[1]"));
+			price = rows.stream().filter(s->s.getText().contains("Rice"))
+					.map(s->getVeggiePrice(s)).collect(Collectors.toList());
+			if(price.size()<1)
+			{
+				driver.findElement(By.cssSelector("[aria-label='Next']")).click();
+			}
+		}while(price.size()<1);
+		
+		price.forEach(a->System.out.println(a));
 
+	}
+
+	private static String getVeggiePrice(WebElement s) {
+		String priceOfElement = s.findElement(By.xpath("following-sibling::td[1]")).getText();
+		return priceOfElement;
 	}
 
 }
